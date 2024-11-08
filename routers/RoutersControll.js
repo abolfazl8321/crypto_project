@@ -4,12 +4,14 @@ const authRouter=require('./auth');
 const dashboardRouter=require('./dashboard');
 const descriptionRouter=require('./description');
 const cryptoRouter=require('./crypto');
+const transactionRouter=require('./transaction');
 require('dotenv').config();
 
 router.use('/auth',authRouter);
 router.use('/dashboard',dashboardRouter);
 router.use('/description',descriptionRouter);
 router.use('/crypto',cryptoRouter);
+router.use('/transaction',transactionRouter);
 router.get('/logout',(req,res)=>{
     req.logout((err)=>{
         if(err){
